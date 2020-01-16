@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-size: 13px;
+    color: #2c2c2c;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd5d5;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #2c2c2c;
+}
+.wrapper {
+    background-color: #ffffff;
+    /* width: 1060px; */
+    max-width: 1060px;
+    width: 100%;
+    padding: 50px 46px 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+    margin-bottom: 40px;
+}
+.header-nav {
+    background-image: linear-gradient(#5e5e5e, #444343);
+}
+.header-menu a {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 14px 24px;
+    display: block;
+}
+.header-menu li {
+    display: inline-block; 
+}
+.header-page {
+    margin-bottom: 40px;
+}
+.aside {
+    /* width: 240px; */
+    width: 25%;
+    float: left;
+}
+.main {
+    /* width: 678px; */
+    width: 65%;
+    float: right;
+}
+.left-menu {
+    border: 1px solid #c8c8c8;
+}
+.left-menu a {
+    display: block;
+    padding: 15px 22px;
+}
+.left-menu li {
+    border-bottom: 1px solid #c8c8c8; 
+}
+.left-menu li:last-child {
+    border-bottom: none;
+}
+.clearfix::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+.main-img {
+   width: 100%; 
+   border: 1px solid #2c2c2c;
+   overflow: hidden;
+}
+.main-img img {
+    max-width: 100%; 
+    height: auto;
+    transition: transform 0.5s;
+}
+.main-img img:hover {
+    transform: scale(1.2, 1.2);
+    /* transform:  translateY(-20px); */
+    /* transform:  rotate(45deg); */
+    transition: transform 0.5s;
+}
+.mob-menu i {
+    font-size: 40px;
+}
+.mob-menu {
+    display: none;
+}
+.logo img {
+    animation: logo-move 2s infinite;
+    animation-timing-function: linear;
+}
+@keyframes logo-move {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg);}
+}
+
+@media ( max-width:768px ) {
+    .header-menu li {
+        display: block; 
+        text-align: center;
+    }
+    .aside {
+        display: none;
+    }
+    .main {
+        width: 100%;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .header-nav {
+        /* display: none; */
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        width: 320px;
+        height: 100vh;
+        overflow-y: auto;
+        transform: translateX(-110%);
+        transition: 0ms;
+    }
+    .menu-visible {
+        transform: translate(0);
+        transition: 225ms;
+    }
+    .mob-menu {
+        display: block;
+    }
+    /* .mob-menu:hover + .header-nav {
+        display: block;
+    }
+    .header-nav:hover  {
+        display: block;
+    } */
+}
